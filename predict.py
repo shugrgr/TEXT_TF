@@ -3,6 +3,7 @@ import shutil
 import os
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 from linear import Linear,Linear_config
+from cnn import CNN,CNN_config
 
 from tensorflow.examples.tutorials.mnist import input_data
 mnist = input_data.read_data_sets('./data/mnist', one_hot=True)

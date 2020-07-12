@@ -10,6 +10,7 @@ class Linear_config(object):
         self.output_size = 10
         self.epoch = 20000
         self.display_setp = 500
+        self.dropout = 0.5
         
 
 class Linear(object):
@@ -20,6 +21,7 @@ class Linear(object):
     def _init_layer(self):
         self.X = tf.placeholder(tf.float32, shape=[None ,self.config.input_size], name='X')
         self.Y = tf.placeholder(tf.float32, shape=[None ,self.config.output_size], name='Y')
+        self.dropout = tf.placeholder(tf.float32)
         with tf.name_scope("layer1"):
             self.layer1 = tf.layers.dense(self.X, self.config.hidden_size, activation=tf.nn.relu, name='layer1')
         with tf.name_scope("layer2"):
